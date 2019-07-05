@@ -13,6 +13,7 @@
     let bottleMesh, metalMesh, bottleMat, metalMat, bottleGroup;
     let hemiLight, dirLight;
     let exrBackground, exrCubeRenderTarget;
+    let isLoad = false;
     
   </script>
   <script type="module">
@@ -134,11 +135,9 @@
         } );
         
       function DDD() {
-        
         setTimeout(function(){ console.log('OKGO'); }, 3000);
       }
-      // DDD();
-      // Load Texture
+      
       loader = new FBXLoader();
       let textureloader = new THREE.TextureLoader();
       
@@ -207,6 +206,11 @@
 
     }
 
+    function loadEnv() {
+      metalMat.envMap = exrCubeRenderTarget.texture;
+      bottleMat.envMap = exrCubeRenderTarget.texture;
+    }
+
     function onWindowResize() {
 
       camera.aspect = window.innerWidth / window.innerHeight;
@@ -233,9 +237,15 @@
 
     function render() {
       // console.log(metalMesh);
-      metalMesh.material.needsUpdate = true;
-      bottleMesh.material.needsUpdate = true;
+      // metalMesh.material.needsUpdate = true;
+      // bottleMesh.material.needsUpdate = true;
       renderer.render( scene, camera );
+      if(metalMesh){
+        isLoad = true;
+        loadEnv();
+        metalMesh.material.needsUpdate = true;
+        bottleMesh.material.needsUpdate = true;
+      }
     }
 
   </script>
