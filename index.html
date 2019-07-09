@@ -175,7 +175,7 @@
       
       let geometry = new THREE.TorusKnotBufferGeometry( 18, 8, 150, 20 );
       mesh = new THREE.Mesh( geometry, material );
-      // scene.add( mesh );
+      scene.add( mesh );
       mesh.position.x = 7;
       mesh.scale.set(0.1,0.1,0.1);
                                                       
@@ -201,7 +201,7 @@
         // console.log(fbx);
         bottleGroup.add( fbx );
       });
-      scene.add( bottleGroup );
+      // scene.add( bottleGroup );
       window.addEventListener( 'resize', onWindowResize, false );
 
     }
