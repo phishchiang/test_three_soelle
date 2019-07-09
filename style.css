@@ -2,3 +2,17 @@
   margin: 0;
   padding: 0;
 }
+
+
+div {
+  width: 200px;
+  height: 20px;
+  background: #000;
+  border: 2px solid #000;
+}
+div > div {
+  width: 200px;
+  height: 20px;
+  background: red;
+  border: none;
+}

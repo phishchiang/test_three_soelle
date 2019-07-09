@@ -20,6 +20,7 @@
     import * as THREE from './node_modules/three/build/three.module.js';
     import { OrbitControls } from './node_modules/three/examples/jsm/controls/OrbitControls.js';
     import { FBXLoader } from './node_modules/three/examples/jsm/loaders/FBXLoader.js';
+    import { LoadingManager } from './node_modules/three/src/loaders/LoadingManager.js';
 
     import { EXRLoader } from './node_modules/three/examples/jsm/loaders/EXRLoader.js';
     import { EquirectangularToCubeGenerator } from './node_modules/three/examples/jsm/loaders/EquirectangularToCubeGenerator.js';
@@ -36,6 +37,28 @@
 
     function init() {
 
+      // let manager = new THREE.LoadingManager();
+      // console.log(LoadingManager);
+
+      let progress = document.createElement('div');
+      let progressBar = document.createElement('div');
+
+      progress.appendChild(progressBar);
+
+      document.body.appendChild(progress);
+
+      let manager = new THREE.LoadingManager();
+      manager.onProgress = function ( item, loaded, total ) {
+        progressBar.style.width = (loaded / total * 100) + '%';
+      };
+
+      function addRandomPlaceHoldItImage(){
+        let r = Math.round(Math.random() * 4000);
+        new THREE.ImageLoader(manager).load('http://placehold.it/' + r + 'x' + r);
+      }
+
+      // for(let i = 0; i < 10; i++) addRandomPlaceHoldItImage();
+      
       camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 10000 );
       camera.position.z = 400;
       camera.position.set( -5.86, 7, -10 );
