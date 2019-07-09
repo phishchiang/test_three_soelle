@@ -5,14 +5,14 @@
 
 
 div {
-  width: 200px;
-  height: 20px;
+  width: 100vw;
+  height: 5px;
   background: #000;
-  border: 2px solid #000;
+  border: 0px solid #000;
 }
 div > div {
-  width: 200px;
-  height: 20px;
-  background: red;
+  width: vw;
+  height: 5px;
+  background: rgb(233, 64, 49);
   border: none;
 }
