@@ -47,17 +47,20 @@
 
       document.body.appendChild(progress);
 
-      let manager = new THREE.LoadingManager();
+      let manager = new LoadingManager();
       manager.onProgress = function ( item, loaded, total ) {
         progressBar.style.width = (loaded / total * 100) + '%';
+        console.log(loaded / total);
       };
 
       function addRandomPlaceHoldItImage(){
         let r = Math.round(Math.random() * 4000);
         new THREE.ImageLoader(manager).load('http://placehold.it/' + r + 'x' + r);
+        // new THREE.ImageLoader(manager).load('./resource/textures/lion/texture.jpg');
       }
 
-      // for(let i = 0; i < 10; i++) addRandomPlaceHoldItImage();
+      
+      for(let i = 0; i < 10; i++) addRandomPlaceHoldItImage();
       
       camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 10000 );
       camera.position.z = 400;
