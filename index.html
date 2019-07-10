@@ -51,12 +51,12 @@
       manager.onProgress = function ( item, loaded, total ) {
         progressBar.style.width = (loaded / total * 100) + '%';
         console.log(loaded / total);
+        console.log(item, loaded, total)
       };
 
       function addRandomPlaceHoldItImage(){
         let r = Math.round(Math.random() * 4000);
-        new THREE.ImageLoader(manager).load('http://placehold.it/' + r + 'x' + r);
-        // new THREE.ImageLoader(manager).load('./resource/textures/lion/texture.jpg');
+        // new THREE.ImageLoader(manager).load('http://placehold.it/' + r + 'x' + r);
       }
 
       
@@ -132,7 +132,7 @@
       controls.target = new THREE.Vector3(0, 5, 0);
 
       // EXR
-      new EXRLoader()
+      new EXRLoader(manager)
         .setType( THREE.FloatType )
         .load( 'resource/textures/lion/Pattern4.exr', function ( texture ) {
 
@@ -163,8 +163,8 @@
         setTimeout(function(){ console.log('OKGO'); }, 3000);
       }
       
-      loader = new FBXLoader();
-      let textureloader = new THREE.TextureLoader();
+      loader = new FBXLoader(manager);
+      let textureloader = new THREE.TextureLoader(manager);
       
       let bottleTextureMap_C = textureloader.load( 'resource/textures/lion/YWC_AlbedoTransparency.png' );
       let bottleTextureMap_NM = textureloader.load( 'resource/textures/lion/YWC_Normal.png' );
