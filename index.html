@@ -43,6 +43,9 @@
       let progress = document.createElement('div');
       let progressBar = document.createElement('div');
 
+      progress.setAttribute("id", "progress");
+      progressBar.setAttribute("id", "progressBar");
+      
       progress.appendChild(progressBar);
 
       document.body.appendChild(progress);
@@ -58,8 +61,9 @@
         let r = Math.round(Math.random() * 4000);
         // new THREE.ImageLoader(manager).load('http://placehold.it/' + r + 'x' + r);
       }
-
       
+
+
       for(let i = 0; i < 10; i++) addRandomPlaceHoldItImage();
       
       camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 10000 );
@@ -159,9 +163,7 @@
 
         } );
         
-      function DDD() {
-        setTimeout(function(){ console.log('OKGO'); }, 3000);
-      }
+      
       
       loader = new FBXLoader(manager);
       let textureloader = new THREE.TextureLoader(manager);
@@ -273,5 +275,13 @@
       }
     }
   </script>
+  <script>
+    function DDD() {
+      console.log('OKGO');
+      // window.open("https://www.google.com/", "_self", "height=600, width=800, menubar=no, scrollbars=no");
+      window.open("https://www.google.com/", "_blank", "height=600, width=800, menubar=no, scrollbars=no");
+    }
+  </script>
+  <button type="button" id="button" value="Open popup" onclick="DDD()">Click Me!</button>
 </body>
 </html>

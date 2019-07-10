@@ -4,7 +4,7 @@
 }
 
 
-div {
+/* div {
   width: 100vw;
   height: 5px;
   background: #000;
@@ -12,6 +12,20 @@ div {
 }
 div > div {
   width: vw;
+  height: 5px;
+  background: rgb(233, 64, 49);
+  border: none;
+} */
+
+#progress{
+  width: 100vw;
+  height: 5px;
+  background: #000;
+  border: 0px solid #000;
+}
+
+#progress > #progressBar {
+  width: 100vw;
   height: 5px;
   background: rgb(233, 64, 49);
   border: none;
