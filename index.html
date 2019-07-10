@@ -276,12 +276,17 @@
     }
   </script>
   <script>
-    function DDD() {
+    function openNewWinFunc() {
       console.log('OKGO');
       // window.open("https://www.google.com/", "_self", "height=600, width=800, menubar=no, scrollbars=no");
       window.open("https://www.google.com/", "_blank", "height=600, width=800, menubar=no, scrollbars=no");
     }
+    function openNewTabFunc() {
+      console.log('OKGO');
+      window.open("https://www.google.com/");
+    }
   </script>
-  <button type="button" id="button" value="Open popup" onclick="DDD()">Click Me!</button>
+  <button type="button" id="button" value="Open popup" onclick="openNewWinFunc()">Click Me!</button>
+  <button type="button" id="button" value="Open popup" onclick="openNewTabFunc()">Click Me!</button>
 </body>
 </html>
