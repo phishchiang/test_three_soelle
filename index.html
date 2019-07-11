@@ -15,8 +15,14 @@
   -->
 </head>
 <body>
+  <!-- 
+  <iframe width="960" height="800" src="http://117.143.185.254:15000/web_1/index.html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; " mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen>
+  </iframe>
+   -->
+
   <iframe width="960" height="800" src="https://suspicious-pare-dcb8f2.netlify.com/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; " mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen>
   </iframe>
+
   <!-- <div class="webgl-content">
     <div id="gameContainer" style="width: 960px; height: 600px"></div>
     <div class="footer">
@@ -121,7 +127,7 @@
 
       renderer = new THREE.WebGLRenderer( { antialias: true } );
       renderer.setPixelRatio( window.devicePixelRatio );
-      renderer.setSize( window.innerWidth, window.innerHeight );
+      renderer.setSize( window.innerWidth, window.innerHeight-50 );
       renderer.gammaInput = true;
       renderer.gammaOutput = true;
       renderer.toneMapping = THREE.LinearToneMapping;
@@ -260,7 +266,7 @@
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
 
-      renderer.setSize( window.innerWidth, window.innerHeight );
+      renderer.setSize( window.innerWidth, window.innerHeight-50 );
 
     }
 
