@@ -15,14 +15,13 @@
   -->
 </head>
 <body>
-  <!-- 
+  
   <iframe width="960" height="800" src="http://117.143.185.254:15000/web_1/index.html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; " mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen>
   </iframe>
-   -->
-
-  <iframe width="960" height="800" src="https://suspicious-pare-dcb8f2.netlify.com/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; " mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen>
+  <!-- 
+  <iframe id="unity_i_frame" width="960" height="800" src="https://suspicious-pare-dcb8f2.netlify.com/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; " mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen>
   </iframe>
-
+  -->
   <!-- <div class="webgl-content">
     <div id="gameContainer" style="width: 960px; height: 600px"></div>
     <div class="footer">
@@ -32,6 +31,7 @@
     </div>
   </div> -->
   <script type="text/javascript">
+    
   </script>
   <script type="module">
     let camera, scene, renderer;
@@ -76,8 +76,8 @@
       let manager = new LoadingManager();
       manager.onProgress = function ( item, loaded, total ) {
         progressBar.style.width = (loaded / total * 100) + '%';
-        console.log(loaded / total);
-        console.log(item, loaded, total)
+        // console.log(loaded / total);
+        // console.log(item, loaded, total);
       };
 
       function addRandomPlaceHoldItImage(){
@@ -132,6 +132,10 @@
       renderer.gammaOutput = true;
       renderer.toneMapping = THREE.LinearToneMapping;
       document.body.appendChild( renderer.domElement );
+      // let container = document.getElementById( 'canvas' );
+      // document.body.appendChild( container );
+      // container.appendChild( renderer.domElement );
+
       console.log(renderer);
       controls = new OrbitControls(camera, renderer.domElement);
       camera.position.set( -5.86, 7, -10 );
@@ -309,13 +313,15 @@
       window.open("https://www.google.com/");
     }
   </script>
+  <!-- 
   <iframe width="960" height="540" src="https://www.youtube.com/embed/1uJQxq6epDk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
   </iframe>
   <iframe width="640" height="480" src="https://sketchfab.com/models/38dcae26e4004722a46598f84653a586/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-
+  
 
   <br/>
   <button type="button" id="button" value="Open popup" onclick="openNewWinFunc()">Click Me!</button>
   <button type="button" id="button" value="Open popup" onclick="openNewTabFunc()">Click Me!</button>
+  -->
 </body>
 </html>
