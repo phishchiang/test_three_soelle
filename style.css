@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   /* overflow: hidden; */
+  overflow-x: hidden;
 }
 
 
@@ -21,6 +22,7 @@ div > div {
 iframe{
   width: 100vw;
   height: 100vh;
+  /* overflow: hidden; */
 }
 
 #progress{
